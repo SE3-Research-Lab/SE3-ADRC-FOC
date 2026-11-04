@@ -7,9 +7,9 @@ close all hidden;
 % sample time
 % This is set based on the FPGA's base clock speed. Additional multi-rate
 % clocking is handled in the Simulink Model
-Ts=2e-5; 
+%Ts=2e-5; 
 %% Tim, please try this value for Ts instead. I'm not sure how this will change the system, however it might be worth me writting about. Thanks!
-%Ts = 5e-9; 
+Ts = 5e-9; 
 %% Stepper Motor Parameters
 % motor parameters
 RT=50 ; 
@@ -109,7 +109,7 @@ loadcell_decode_gain = 47.1460;
 adc_volts_per_count = ADC_VREF / (2^ADC_Precision-1);
 
 % Spring values 
-spring_constant = 5; % Units of lbf inch (Standard for most McMaster Carr Springs)
+spring_constant = 20; % Units of lbf inch (Standard for most McMaster Carr Springs)
 % Convert the spring constant to Newton Meters for SI units
 spring_constant = (spring_constant * lbf_to_N)/in_to_m;
 %% Ballscrew Parameters
@@ -149,7 +149,7 @@ bid=1/L;
 biq=1/L;
 [k1_iqd,alpha_iqd,beta_iqd,gam_iqd]=MFP_ADRC_1st_params_multirate(biq,zCL_iqd,zESO_iqd,Ts);
 
-steps = 16000;
+steps = 400;
 theta_ref=steps*1.8*pi/180; 
 %theta_ref = 0.000314159 * 1000;
 
@@ -180,7 +180,7 @@ bitwiseOperator = fixdt(0,32,0);
 VelType = fixdt(1,128, 64);
 %% Simulate
 % Important: Run the updated Simulink Model
-% simOut=sim("stepperMotorADRCFirstOrderDataCollection",'StopTime','0.25')
+simOut=sim("stepperMotorADRCFirstOrderDataCollection",'StopTime','2.5')
 
 %% Plotting
 % data is prefixed with log_ and suffixed with _[letter corresponding to
@@ -277,7 +277,7 @@ ylabel('Torque (N\cdotm)');
 legend("actual")
 hold off
 
-log_dir = "logs";
+log_dir = "./logs";
 
 t = datetime();
 if ~isfolder(log_dir)
@@ -290,7 +290,7 @@ mkdir(log_dir + "/" + time);
 
 path = log_dir + '/' + time + '/';
 
-writelines('description of test', path + 'description.txt');
+writelines(['Ts = 5e-9', 'spring_constant = 20', 'steps = 400'], path + 'description.txt');
 saveas(angular_vel_plot, path + 'Angular_Vel', 'png');
 saveas(current_plot, path + 'Current', 'png');
 saveas(position_plot, path + 'Position', 'png');
