@@ -60,4 +60,4 @@ src/**/slprj/*
 #Ignore all simulink caches in project 
 #These are also device specific and can cause errors in openning in various versions 
 #or on different computers
-src/**/.slxc
+src/**/*.slxc
