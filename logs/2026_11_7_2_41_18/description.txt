@@ -1,0 +1,1 @@
+Ts = 5e-9spring_constant = 20steps = 400
