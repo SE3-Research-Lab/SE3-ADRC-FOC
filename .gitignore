@@ -40,3 +40,11 @@ vivado_project/KR260_CarrierBoard_ADRC/KR260_CarrierBoard_ADRC.srcs*
 
 #Kernel Modules
 ubuntuArm-Docker/modules/hello
+
+# Simulation results from local and HPC runs
+# HPC simulation results are stored on Blackmore storage
+src/results/
+
+# HPC settings with account names and e-mail.
+# Copy src/matlab/HPC-Scripts/slurm/hpc.env.example to hpc.env and fill it in.
+hpc.env
