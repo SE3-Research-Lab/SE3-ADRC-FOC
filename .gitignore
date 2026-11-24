@@ -50,4 +50,9 @@ src/results/
 hpc.env
 
 # Ignore all .mat files in the documenation folder
-documenation/*.mat
+documenation/*.mat\
+
+#Ignore MATLAB working directory slprj files 
+#These are cached states per workspace and are therefore rewritten on each machine
+#Passing these around on git wastes space and makes commits messy
+slprj/*
