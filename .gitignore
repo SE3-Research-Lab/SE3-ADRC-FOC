@@ -61,3 +61,4 @@ src/**/slprj/*
 #These are also device specific and can cause errors in openning in various versions 
 #or on different computers
 src/**/*.slxc
+src/slprj/_jitprj/jitEngineAccessInfo.mat
