@@ -48,3 +48,6 @@ src/results/
 # HPC settings with account names and e-mail.
 # Copy src/matlab/HPC-Scripts/slurm/hpc.env.example to hpc.env and fill it in.
 hpc.env
+
+# Ignore all .mat files in the documenation folder
+documenation/*.mat
