@@ -8,7 +8,8 @@ Graduate research project, **SE3 Research Lab, Montana State University**.
 |---|---|
 | Principal Investigator | Dr. David Miller |
 | Project Advisor | Dr. Michael Edens |
-| Primary Contributors | Caleb Binfet, Timothy (Drew) Currie |
+| Primary Contributors | Timothy Ellis  |
+| Past Contributors | Caleb Binfet, MSEE Spring 2026, Timothy (Drew) Currie, MSEE Fall 2026|
 
 ---
 
