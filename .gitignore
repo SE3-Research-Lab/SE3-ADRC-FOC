@@ -56,3 +56,7 @@ documentation/**/*.mat
 #These are cached states per workspace and are therefore rewritten on each machine
 #Passing these around on git wastes space and makes commits messy
 src/slprj/*
+#Ignore all simulink caches in project 
+#These are also device specific and can cause errors in openning in various versions 
+#or on different computers
+src/**/.slxc
